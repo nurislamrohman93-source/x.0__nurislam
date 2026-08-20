@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>@x.0__nurislam | Instagram Profile</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff,#ffe4f0,#ffd1e3);
+    color:#222;
+}
+
+/* WELCOME */
+.welcome{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    background:
+    radial-gradient(circle at top,#fff 0%,transparent 40%),
+    linear-gradient(135deg,#ffeff6,#fff,#ffd9e8);
+}
+
+.welcome-box{
+    animation:fadeIn 1.2s ease;
+}
+
+.logo{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff2d75,#ff8fb7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:42px;
+    color:white;
+    box-shadow:0 15px 40px #ff7fae66;
+}
+
+.welcome h1{
+    margin-top:25px;
+    font-size:32px;
+}
+
+.welcome p{
+    margin-top:10px;
+    color:#777;
+    font-size:16px;
+}
+
+.enter-btn{
+    margin-top:30px;
+    padding:14px 32px;
+    border:none;
+    border-radius:30px;
+    background:#ff3f82;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 10px 25px #ff3f8255;
+    transition:.3s;
+}
+
+.enter-btn:hover{
+    transform:scale(1.06);
+}
+
+/* PROFILE */
+.profile-page{
+    display:none;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.profile-card{
+    background:#ffffffd9;
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 15px 50px #ff78a533;
+}
+
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.profile-pic{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    box-shadow:0 5px 25px #ff4e8a55;
+}
+
+.username{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.bio{
+    color:#666;
+    margin-top:8px;
+}
+
+.stats{
+    display:flex;
+    gap:30px;
+    margin-top:15px;
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat b{
+    display:block;
+    font-size:18px;
+}
+
+.stat span{
+    font-size:13px;
+    color:#777;
+}
+
+.buttons{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.instagram-btn,
+.add-btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.instagram-btn{
+    background:#ff3f82;
+    color:white;
+}
+
+.add-btn{
+    background:#ffe1ec;
+    color:#e52e6e;
+}
+
+/* GALLERY */
+.gallery-title{
+    margin:30px 0 15px;
+    font-size:20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.photo{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.photo:hover{
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+    font-size:13px;
+}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#000b;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:80%;
+    border-radius:15px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    color:white;
+    font-size:35px;
+    cursor:pointer;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:600px){
+
+    .welcome h1{
+        font-size:26px;
+    }
+
+    .profile-top{
+        align-items:flex-start;
+    }
+
+    .profile-pic{
+        width:85px;
+        height:85px;
+    }
+
+    .username{
+        font-size:20px;
+    }
+
+    .stats{
+        gap:15px;
+    }
+
+    .profile-card{
+        padding:18px;
+    }
+
+    .gallery{
+        gap:5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+<section class="welcome" id="welcome">
+
+    <div class="welcome-box">
+
+        <div class="logo">📸</div>
+
+        <h1>Welcome to My Instagram</h1>
+
+        <p>
+            A little place about me ✨<br>
+            Follow my journey & memories
+        </p>
+
+        <button class="enter-btn" onclick="enterProfile()">
+            Enter My Profile →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PROFILE PAGE -->
+<section class="profile-page" id="profile">
+
+    <div class="profile-card">
+
+        <div class="profile-top">
+
+            <!-- Apni profile photo yaha change karo -->
+            <img
+                class="profile-pic"
+                src="https://via.placeholder.com/200"
+                alt="Profile">
+
+            <div>
+
+                <div class="username">
+                    @x.0__nurislam
+                </div>
+
+                <div class="bio">
+                    📸 Memories • Life • Moments<br>
+                    ✨ Welcome to my little world
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <b id="photoCount">0</b>
+                        <span>Photos</span>
+                    </div>
+
+                    <div class="stat">
+                        <b>∞</b>
+                        <span>Memories</span>
+                    </div>
+
+                    <div class="stat">
+                        <b>❤️</b>
+                        <span>Love</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <button
+                class="instagram-btn"
+                onclick="openInstagram()">
+                Instagram
+            </button>
+
+            <button
+                class="add-btn"
+                onclick="document.getElementById('photoInput').click()">
+                ＋ Add Photo
+            </button>
+
+        </div>
+
+
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/*"
+            multiple
+            hidden>
+
+
+        <h2 class="gallery-title">
+            📷 My Photos
+        </h2>
+
+        <div class="gallery" id="gallery">
+
+            <!-- Demo photos -->
+            <img
+                class="photo"
+                src="https://picsum.photos/600/600?random=1"
+                onclick="showPhoto(this.src)">
+
+            <img
+                class="photo"
+                src="https://picsum.photos/600/600?random=2"
+                onclick="showPhoto(this.src)">
+
+            <img
+                class="photo"
+                src="https://picsum.photos/600/600?random=3"
+                onclick="showPhoto(this.src)">
+
+        </div>
+
+    </div>
+
+    <footer>
+        Made with ❤️ by @x.0__nurislam
+    </footer>
+
+</section>
+
+
+<!-- PHOTO VIEWER -->
+<div class="modal" id="modal">
+
+    <span class="close" onclick="closePhoto()">×</span>
+
+    <img id="modalImage">
+
+</div>
+
+
+<script>
+
+function enterProfile(){
+
+    document.getElementById("welcome").style.display="none";
+
+    document.getElementById("profile").style.display="block";
+
+    window.scrollTo(0,0);
+
+    updateCount();
+}
+
+
+function openInstagram(){
+
+    window.open(
+        "https://instagram.com/x.0__nurislam",
+        "_blank"
+    );
+
+}
+
+
+/* ADD PHOTOS */
+
+document
+.getElementById("photoInput")
+.addEventListener("change",function(){
+
+    const files=this.files;
+
+    for(let file of files){
+
+        const reader=new FileReader();
+
+        reader.onload=function(e){
+
+            const img=document.createElement("img");
+
+            img.src=e.target.result;
+
+            img.className="photo";
+
+            img.onclick=function(){
+
+                showPhoto(this.src);
+
+            };
+
+            document
+            .getElementById("gallery")
+            .appendChild(img);
+
+            updateCount();
+
+        };
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+
+function updateCount(){
+
+    const photos=
+    document.querySelectorAll(".gallery .photo").length;
+
+    document.getElementById("photoCount").innerText=photos;
+
+}
+
+
+/* PHOTO FULL SCREEN */
+
+function showPhoto(src){
+
+    document.getElementById("modal").style.display="flex";
+
+    document.getElementById("modalImage").src=src;
+
+}
+
+
+function closePhoto(){
+
+    document.getElementById("modal").style.display="none";
+
+}
+
+
+/* INITIAL COUNT */
+
+updateCount();
+
+</script>
+
+</body>
+  </html>
